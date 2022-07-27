@@ -1,0 +1,253 @@
+:root {
+    --redColor: #bc1f32;
+    --redColor2: #ed4859;
+    --purple: #4e31b7;
+    --purple2: #a75dce;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(160deg,rgb(225, 223, 234)20%,rgb(167, 155, 234));
+
+}
+
+#calculator {
+    width: 19em;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px;
+}
+#parent-toggle {
+    height: 30px;
+    width: 70px;
+    background-color: var(--redColor);
+    align-self: flex-end;
+    margin: 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#child-toggle {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 5px;
+    transition: transform .5s ease-in-out;
+}
+
+#outputInterface {
+    height: 8em ;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+input {
+    font-size: 4em;
+    border: none;
+    width: 100%;
+    text-align: end;
+    background-color: #000;
+    outline: none;
+    color: #fff;
+}
+
+#buttons {
+    padding: .625em;
+    background: linear-gradient(90deg, var(--redColor), var(--redColor2));
+    border-radius: 50%  50% 0 0;
+    width: 200%;
+    /* position: relative;
+    right: 160px; */
+    
+}
+
+#calculator > #buttons > ul{
+    text-align: center;
+    width: 17em;
+    list-style-type: none;
+    padding-top: .625em;
+    display: grid;
+    margin: 0 auto ;
+    grid-template-columns: repeat(3, 1fr) 50px;
+    grid-template-areas: 'ac negate division modulous'
+    'seven eight nine multiply'
+    'four five six subtract'
+    'one two three Add'
+    'zero zero decimal equals';
+}
+.main {
+    padding: 10px;
+}
+#calculator > #buttons > ul > li {
+    padding: .5125em .1em;
+    font-size: 2em;
+    color: #fff;
+}
+#calculator > #buttons > ul > .main:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+#calculator > #buttons > ul >li.aside {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    color: #000;
+}
+#calculator > #buttons > ul > .aside:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+}
+#modulous{
+    border-radius: 50% 50% 0 0;
+    height: 50px;
+    top: 10px;
+}
+
+#multiply {
+    height: 50px;
+    bottom: 10px;
+
+}
+#subtract {
+    height: 50px;
+    bottom: 30px;
+}
+
+#Add{
+    border-radius: 0 0 50% 50%;
+    grid-area: Add;
+    height: 50px;
+    bottom: 50px;
+}
+
+#equals {
+    position: relative;
+    bottom: 40px; 
+    border-radius: 20px;
+}
+
+#zero {
+    position: relative;
+    grid-area: zero;
+    left: 25px;
+}
+
+#zero,
+#decimal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+}
+#decimal {
+    width: 50px;
+    position: relative;
+    left: 15px;
+    
+
+}
+#decimal > div {
+    font-size: 50px;
+    position: relative;
+    bottom: 10px;
+    left: 12px;
+}
+
+#calculator > #buttons > ul  #zero:hover{
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+
+
+/* JAVASCRIPT STYLING */
+#calculator #parent-toggle.switchTheme {
+    background: linear-gradient(90deg, var(--purple), var(--purple2));
+
+}
+#calculator #parent-toggle.switchTheme #child-toggle {
+    transition: transform .5s ease-in-out;
+    transform: translateX(37px);
+}
+#calculator #parent-toggle.switchTheme ~ #buttons  {
+    background: linear-gradient(90deg, var(--purple), var(--purple2));
+}
+
+
+
+
+
+
+@media (max-width: 425px){
+    #calculator {
+        height: 100vh;
+        width: 100vw;
+        border-radius: 0;
+        justify-content: flex-end;
+    }
+    #buttons {
+        display: flex;
+        height: 70vh;
+    }
+    #calculator > #buttons > ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        flex-wrap: wrap;
+        align-self: flex-end;
+        
+    }
+    #calculator > #buttons > ul li {
+        width: 50px;
+        height: 50px;
+        margin-right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #calculator > #buttons > ul >li.aside{
+        position: static;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        margin-right: 0;
+
+    }
+    #calculator > #buttons > ul >li.bottom {
+        height: 50px;
+        margin-top: 10px;
+    }
+    #seven, #eight, #nine, #multiply {
+        height: 50px;
+    }
+    #decimal {
+        position: relative;
+        left: -10px;
+    }
+    
+}

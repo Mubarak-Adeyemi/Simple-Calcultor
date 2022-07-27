@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="shortcut icon" href="./images/calculator.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="calculator">
+        <div id="parent-toggle">
+            <div id="child-toggle"></div>
+        </div>
+        <div id="outputInterface">
+            <input type="text" id="displayOutput" placeholder="0">
+        </div>
+        <div id="buttons">
+            <ul>
+                <li id="division" class="main top" onclick="calculate('/')">/</li>
+                <li id="clear" class="main top" onclick="clr()" >C</li>
+                <li id="del" class="main top" onclick="del()">CE</li>
+                <li id="modulous" class="aside top" onclick="calculate('%')">%</li>
+                <li id="seven" class="main" onclick="calculate(7)">7</li>
+                <li id="eight" class="main" onclick="calculate(8)">8</li>
+                <li id="nine" class="main" onclick="calculate(9)">9</li>
+                <li id="multiply" class="aside" onclick="calculate('*')">*</li>
+                <li id="four" class="main" onclick="calculate(4)">4</li>
+                <li id="six" class="main" onclick="calculate(6)">6</li>
+                <li id="five" class="main" onclick="calculate(5)">5</li>
+                <li id="subtract" class="aside" onclick="calculate('-')">-</li>
+                <li id="one" class="main" onclick="calculate(1)">1</li>
+                <li id="two" class="main" onclick="calculate(2)">2</li>
+                <li id="three" class="main" onclick="calculate(3)">3</li>
+                <li id="Add" class="aside" onclick="calculate('+')">+</li>
+                <li id="zero" class="main bottom" onclick="calculate(0)">0</li>
+                <li id="decimal" class="main bottom" onclick="calculate('.')"><div>.</div></li>
+                <li id="equals" class="aside bottom" onclick="result('=')">=</li>
+            </ul>
+        </div>
+    </div>
+
+
+   <script src="./life.js"></script>
+</body>
+</html>
